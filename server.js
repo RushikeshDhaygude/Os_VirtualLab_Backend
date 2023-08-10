@@ -1,44 +1,28 @@
-// import express from "express";
-// import colors from "colors";
-// import dotenv from "dotenv";
-// import morgan from "morgan";
-// import { connect } from "mongoose";
-// import connectDB from "./config/db.js";
-// import cors from "cors";
-// import authRoutes from "./routes/authRoute.js";
-// import categoryRoutes from "../Ecommerce_Website/routes/categoryRoutes.js";
-// import productRoutes from "../Ecommerce_Website/routes/productRoutes.js";
+import express from "express";
+import dotenv from "dotenv";
+import { connect } from "mongoose";
+import connectDB from "./config/db.js";
+import cors from "cors";
 
-// //rest object
-// const app = express();
+//rest object
+const app = express();
 
-// //config env
-// dotenv.config();
+//config env
+dotenv.config();
 
 //database config
-// connectDB();
+connectDB();
 
-// //middlewares
-// app.use(cors());
-// app.use(express.json());
-// app.use(morgan("dev"));
+//middlewares
+app.use(cors());
+app.use(express.json());
 
-// //routes
-// app.use("/api/v1/auth", authRoutes);
+//port
+const PORT = process.env.PORT || 8080;
 
-// //catgeory routes
-// app.use("/api/v1/category", categoryRoutes);
-
-// //product routes
-// app.use("/api/v1/product", productRoutes);
-
-
-// //port
-// const PORT = process.env.PORT || 8080;
-
-// //run listen
-// app.listen(PORT, () => {
-//   console.log(
-//     `Server Runnnig on ${process.env.DEV_MODE} mode on ${PORT}`.bgCyan.white
-//   );
-// });
+//run listen
+app.listen(PORT, () => {
+  console.log(
+    `Server Runnnig on ${process.env.DEV_MODE} mode on ${PORT}`
+  ); 
+});
