@@ -18,7 +18,6 @@ connectDB();
 //middlewares
 app.use(cors());
 app.use(express.json());
-app.use(bodyParser.json());
 
 app.use('/api/assignment', addContent);
 app.use('/uploads', express.static('uploads'));
