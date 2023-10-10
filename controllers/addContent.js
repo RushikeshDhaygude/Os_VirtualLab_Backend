@@ -3,7 +3,7 @@ import multer from 'multer';
 import Content from '../model/assignment.js';
 
 
-const addContent = async (req, res) => {
+export const addContent = async (req, res) => {
   try {
     const { category, title, video, editor } = req.body;
     const notes = req.file ? req.file.path : null;
@@ -24,6 +24,6 @@ const addContent = async (req, res) => {
   }
 };
 
-export { addContent };
+
 
 
